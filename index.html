@@ -6,8 +6,6 @@
     <title>Macro Shift: Deep Research Companion</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Marked for Markdown rendering in chat -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
        .chart-container { position: relative; height: 300px; width: 100%; }
        .glass-panel { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
@@ -19,17 +17,6 @@
        
        /* Power Bloc Visuals */
        .power-bar { transition: width 1s ease-in-out; }
-
-       /* Chat Widget Animations */
-       .chat-slide-in { animation: slideIn 0.3s ease-out forwards; }
-       .chat-slide-out { animation: slideOut 0.3s ease-in forwards; }
-       @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-       @keyframes slideOut { from { transform: translateY(0); opacity: 1; } to { transform: translateY(20px); opacity: 0; } }
-       
-       /* Markdown Styles in Chat */
-       .prose p { margin-bottom: 0.5em; }
-       .prose ul { list-style-type: disc; margin-left: 1.5em; }
-       .prose strong { color: #d97706; font-weight: 700; }
 
        /* Impact Chain Tabs */
        .chain-tab.active { background-color: #d97706; color: white; border-color: #d97706; }
@@ -96,10 +83,10 @@
                     </p>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                         
-                        <!-- Metric 1: US Debt -->
-                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors">
-                            <div class="text-xs text-stone-500 uppercase truncate cursor-help">US Debt</div>
-                            <div class="text-xl font-mono text-red-400 truncate cursor-help">$38.4T+</div>
+                        <!-- Metric 1: US Debt (Expanded) -->
+                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors flex flex-col justify-center">
+                            <div class="text-xs text-stone-500 uppercase cursor-help mb-1">US National Debt</div>
+                            <div class="text-xl font-mono text-red-400 cursor-help break-words leading-tight">$38.4T+</div>
                             <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 hidden group-hover:block z-50 p-3 bg-black text-stone-100 text-xs rounded shadow-xl border border-stone-700 pointer-events-none">
                                 <div class="font-bold text-amber-500 mb-1">US National Debt</div>
                                 <div>Currently exceeding $38.4 Trillion. Interest payments are now the largest budget item.</div>
@@ -107,10 +94,10 @@
                             </div>
                         </div>
 
-                        <!-- Metric 2: Gold -->
-                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors">
-                            <div class="text-xs text-stone-500 uppercase truncate cursor-help">Gold Buying</div>
-                            <div class="text-xl font-mono text-amber-400 truncate cursor-help">Record Highs</div>
+                        <!-- Metric 2: Gold (Expanded) -->
+                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors flex flex-col justify-center">
+                            <div class="text-xs text-stone-500 uppercase cursor-help mb-1">Gold Accumulation</div>
+                            <div class="text-xl font-mono text-amber-400 cursor-help break-words leading-tight">Record Highs</div>
                             <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 hidden group-hover:block z-50 p-3 bg-black text-stone-100 text-xs rounded shadow-xl border border-stone-700 pointer-events-none">
                                 <div class="font-bold text-amber-500 mb-1">Central Bank Demand</div>
                                 <div>Global central banks are buying gold at the fastest pace since 1967 to diversify away from USD.</div>
@@ -118,10 +105,10 @@
                             </div>
                         </div>
 
-                        <!-- Metric 3: Petrodollar -->
-                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors">
-                            <div class="text-xs text-stone-500 uppercase truncate cursor-help">Petrodollar</div>
-                            <div class="text-xl font-mono text-stone-400 truncate cursor-help">Diluting</div>
+                        <!-- Metric 3: Petrodollar (Expanded) -->
+                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors flex flex-col justify-center">
+                            <div class="text-xs text-stone-500 uppercase cursor-help mb-1">Petrodollar Status</div>
+                            <div class="text-xl font-mono text-stone-400 cursor-help break-words leading-tight">Diluting</div>
                             <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 hidden group-hover:block z-50 p-3 bg-black text-stone-100 text-xs rounded shadow-xl border border-stone-700 pointer-events-none">
                                 <div class="font-bold text-amber-500 mb-1">Reserve Status</div>
                                 <div>Oil trade is increasingly settling in non-USD currencies (Yuan, Gold-notes), reducing structural demand for Dollars.</div>
@@ -129,10 +116,10 @@
                             </div>
                         </div>
 
-                        <!-- Metric 4: Buffett Indicator -->
-                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors">
-                            <div class="text-xs text-stone-500 uppercase truncate cursor-help">Buffett Indicator</div>
-                            <div class="text-lg font-mono text-red-400 truncate cursor-help">215% (High)</div>
+                        <!-- Metric 4: Buffett Indicator (Expanded) -->
+                        <div class="relative group p-3 bg-stone-800 rounded border border-stone-700 hover:border-stone-500 transition-colors flex flex-col justify-center">
+                            <div class="text-xs text-stone-500 uppercase cursor-help mb-1">Buffett Indicator (GDP)</div>
+                            <div class="text-lg font-mono text-red-400 cursor-help break-words leading-tight">215% (High)</div>
                             <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 hidden group-hover:block z-50 p-3 bg-black text-stone-100 text-xs rounded shadow-xl border border-stone-700 pointer-events-none">
                                 <div class="font-bold text-amber-500 mb-1">Market Cap to GDP</div>
                                 <div>At 215%, the stock market is significantly overvalued compared to the real economy. Historical average is ~100%.</div>
@@ -249,14 +236,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Gemini AI Deep Dive Button -->
-                <div class="mt-6 pt-6 border-t border-stone-200 flex justify-end relative z-20">
-                    <button onclick="analyzeChain()" class="flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors">
-                        <span class="text-lg">✨</span>
-                        Ask AI to analyze this specific chain
-                    </button>
-                </div>
             </div>
         </section>
 
@@ -362,61 +341,52 @@
             </div>
         </section>
 
-        <!-- SECTION 5: UNCERTAINTIES & SIMULATOR -->
+        <!-- SECTION 5: UNCERTAINTIES (Fixed Layout) -->
         <section id="risks" class="bg-stone-200 rounded-xl p-8 border border-stone-300">
-             <div class="flex flex-col md:flex-row gap-8 items-start">
-                <div class="md:w-1/3">
+             <div class="flex flex-col md:flex-row gap-8 items-stretch">
+                <!-- System Status Column - Expanded to fill height -->
+                <div class="md:w-1/3 flex flex-col">
                     <h2 class="text-2xl font-bold text-stone-900 mb-4">The Fog of War: Major Uncertainties</h2>
                     <p class="text-stone-600 text-sm mb-6">
                         No model is perfect. While the trend points to devaluation, these "Black Swans" could accelerate, delay, or completely alter the trajectory.
                     </p>
-                    <div class="bg-stone-800 text-stone-200 p-4 rounded text-xs font-mono">
-                        > CALCULATING VOLATILITY INDEX...<br>
-                        > WAR_RISK = HIGH<br>
-                        > TECH_DEFLATION = UNKNOWN<br>
-                        > SOCIAL_COHESION = CRITICAL
+                    <!-- Expanded Black Box with MORE CONTENT -->
+                    <div class="bg-stone-800 text-stone-200 p-6 rounded text-sm font-mono flex-grow shadow-inner flex flex-col justify-center">
+                        <div class="space-y-4">
+                            <div class="border-b border-stone-600 pb-2 mb-2 text-stone-400 text-xs tracking-widest">SYSTEM STATUS LOG</div>
+                            <div class="text-stone-300">> CALCULATING VOLATILITY INDEX...</div>
+                            <div class="text-red-400 font-bold">> WAR_RISK = HIGH</div>
+                            <div class="text-stone-400">> TECH_DEFLATION = UNKNOWN</div>
+                            <div class="text-amber-400 font-bold">> SOCIAL_COHESION = CRITICAL</div>
+                            
+                            <!-- NEW ITEMS ADDED HERE -->
+                            <div class="text-amber-500">> SUPPLY_CHAINS = FRAGILE</div>
+                            <div class="text-red-400 font-bold">> YIELD_CURVE = INVERTED</div>
+                            <div class="text-stone-300">> ENERGY_GRID = LOAD_MAX</div>
+                            <div class="text-red-500 font-bold">> INSTITUTIONAL_TRUST = LOW</div>
+                            <div class="text-blue-400">> GLOBAL_LIQUIDITY = CONTRACTING</div>
+                            
+                            <div class="text-stone-500 italic mt-6 text-xs animate-pulse border-t border-stone-700 pt-2">// Monitoring geopolitical flashpoints...</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="md:w-2/3 space-y-4">
+                <div class="md:w-2/3 flex flex-col gap-4 justify-center">
                     <!-- Standard Risk Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                         <!-- Uncertainty 1 -->
-                        <div class="bg-white p-4 rounded shadow-sm flex items-center gap-4">
-                            <div class="bg-red-100 text-red-700 p-3 rounded font-bold text-xl">⚠️</div>
-                            <div>
-                                <h4 class="font-bold text-stone-800">Kinetic Conflict</h4>
-                                <p class="text-xs text-stone-600">Historically, multipolarity transitions involve war. Does economic rivalry turn kinetic?</p>
-                            </div>
-                        </div>
-                        <!-- Uncertainty 2 -->
-                        <div class="bg-white p-4 rounded shadow-sm flex items-center gap-4">
-                            <div class="bg-blue-100 text-blue-700 p-3 rounded font-bold text-xl">🤖</div>
-                            <div>
-                                <h4 class="font-bold text-stone-800">AI vs. Inflation</h4>
-                                <p class="text-xs text-stone-600">Technology is deflationary. Could an AI boom offset the debt spiral?</p>
-                            </div>
+                     <!-- Uncertainty 1 -->
+                    <div class="bg-white p-6 rounded shadow-sm flex items-center gap-6 h-full border-l-4 border-red-500">
+                        <div class="text-4xl">⚠️</div>
+                        <div>
+                            <h4 class="font-bold text-stone-800 text-lg">Kinetic Conflict</h4>
+                            <p class="text-sm text-stone-600 mt-1">Historically, transitions from a unipolar to a multipolar world order involve kinetic war (e.g., WWI, WWII). Does economic rivalry turn into direct military conflict? This destroys capital globally.</p>
                         </div>
                     </div>
-
-                    <!-- ✨ GEMINI INTEGRATION: Scenario Simulator -->
-                    <div class="bg-indigo-900 rounded-lg p-5 border border-indigo-700 shadow-lg text-white">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="animate-pulse">✨</span>
-                            <h3 class="font-bold text-lg text-indigo-100">AI Stress Test Simulator</h3>
-                        </div>
-                        <p class="text-xs text-indigo-300 mb-3">
-                            Type a "What If" scenario below to stress-test the thesis using Gemini AI.
-                        </p>
-                        <div class="flex gap-2">
-                            <input type="text" id="scenarioInput" placeholder="e.g., What if the Euro collapses before the Dollar?" 
-                                class="flex-1 bg-indigo-950/50 border border-indigo-700 rounded px-3 py-2 text-sm text-white placeholder-indigo-400 focus:outline-none focus:border-indigo-500 transition-colors">
-                            <button onclick="runScenario()" id="scenarioBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded text-sm font-medium transition-colors flex items-center gap-2">
-                                <span>Simulate</span>
-                            </button>
-                        </div>
-                        <div id="scenarioResult" class="hidden mt-4 bg-indigo-950/80 p-3 rounded border border-indigo-800 text-xs leading-relaxed text-indigo-200">
-                            <!-- AI Output will appear here -->
+                    <!-- Uncertainty 2 -->
+                    <div class="bg-white p-6 rounded shadow-sm flex items-center gap-6 h-full border-l-4 border-blue-500">
+                        <div class="text-4xl">🤖</div>
+                        <div>
+                            <h4 class="font-bold text-stone-800 text-lg">AI vs. Inflation</h4>
+                            <p class="text-sm text-stone-600 mt-1">Technology is naturally deflationary (doing more for less). Could an AI productivity boom offset the inflationary debt spiral? This is the primary "Bull Case" for the US Dollar system.</p>
                         </div>
                     </div>
                 </div>
@@ -495,47 +465,6 @@
 
     </main>
 
-    <!-- ✨ GEMINI INTEGRATION: Chat Widget -->
-    <div id="chat-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        
-        <!-- Chat Window -->
-        <div id="chat-window" class="hidden w-80 sm:w-96 bg-white rounded-xl shadow-2xl border border-stone-200 mb-4 overflow-hidden flex flex-col h-[500px]">
-            <div class="bg-stone-900 p-4 flex justify-between items-center text-white">
-                <div class="flex items-center gap-2">
-                    <span class="text-lg">✨</span>
-                    <div>
-                        <h3 class="font-bold text-sm">Macro Shift Analyst</h3>
-                        <p class="text-[10px] text-stone-400">Powered by Gemini AI</p>
-                    </div>
-                </div>
-                <button onclick="toggleChat()" class="text-stone-400 hover:text-white">✕</button>
-            </div>
-            
-            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-stone-50 text-sm">
-                <!-- Welcome Message -->
-                <div class="flex gap-2">
-                    <div class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs flex-shrink-0">AI</div>
-                    <div class="bg-white p-3 rounded-tr-lg rounded-br-lg rounded-bl-lg border border-stone-200 shadow-sm text-stone-700">
-                        Hello! I am trained on the "Macro Shift" thesis. Ask me about the debt cycle, hard assets, or the 2026 outlook.
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-3 bg-white border-t border-stone-200">
-                <div class="flex gap-2">
-                    <input type="text" id="chatInput" placeholder="Ask a question..." class="flex-1 bg-stone-100 border border-stone-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-all">
-                    <button onclick="sendChatMessage()" id="chatSendBtn" class="bg-stone-900 hover:bg-stone-800 text-white rounded-lg px-3 transition-colors">➤</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Floating Action Button -->
-        <button onclick="toggleChat()" class="group flex items-center justify-center w-14 h-14 bg-stone-900 text-white rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 hover:scale-110 focus:outline-none ring-2 ring-stone-900 ring-offset-2">
-            <span class="text-2xl group-hover:hidden">💬</span>
-            <span class="text-2xl hidden group-hover:block">✨</span>
-        </button>
-    </div>
-
     <footer class="bg-stone-900 border-t border-stone-800 text-stone-500 py-12 text-center">
         <p class="text-sm">Analysis based on "Deep Research Report: The Great Rotation (2026-2035)".</p>
         <p class="text-xs mt-2 max-w-2xl mx-auto">Disclaimer: This dashboard is a visualization of research data. It does not constitute financial advice. Tickers are for illustrative purposes only.</p>
@@ -586,89 +515,7 @@
             }
         });
 
-        // --- GEMINI API INTEGRATION ---
-        
-        const apiKey = ""; // Provided by runtime environment
-        
-        // System Prompt: Defines the AI's persona and knowledge base
-        const systemContext = `
-            You are an expert Macro Analyst specializing in the "150-Year Cycle Shift" thesis. 
-            CORE THESIS:
-            1. The US Debt cycle is ending; interest payments > defense spending.
-            2. The Petrodollar system is diluting due to BRICS+ and oil settling in multiple currencies (starting ~2026).
-            3. We are rotating from Financial Assets (Stocks/Bonds) to Hard Assets (Gold, Commodities, Land).
-            4. Future power is multipolar: China (Manufacturing), India (Demographics), Resource Bloc (BRICS), and Digital Sovereign (Crypto).
-            
-            YOUR TONE: Professional, objective, data-driven, but firm on the "Shift" thesis. 
-            Avoid generic financial advice disclaimers in every sentence, but imply risk.
-            Keep answers concise (under 100 words) unless asked for details.
-            Use Markdown for formatting.
-        `;
-
-        // Helper Function to Call Gemini
-        async function callGeminiAPI(userPrompt) {
-            try {
-                const response = await fetch(
-                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`,
-                    {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            contents: [{ parts: [{ text: userPrompt }] }],
-                            systemInstruction: { parts: [{ text: systemContext }] }
-                        })
-                    }
-                );
-                
-                if (!response.ok) throw new Error('API Error');
-                
-                const data = await response.json();
-                return data.candidates[0].content.parts[0].text;
-            } catch (error) {
-                console.error("Gemini Error:", error);
-                return "I apologize, but I'm having trouble analyzing the data stream right now. Please try again.";
-            }
-        }
-
-        // --- FEATURE 1: SCENARIO SIMULATOR ---
-        
-        async function runScenario() {
-            const input = document.getElementById('scenarioInput');
-            const resultDiv = document.getElementById('scenarioResult');
-            const btn = document.getElementById('scenarioBtn');
-            const userScenario = input.value.trim();
-
-            if (!userScenario) return;
-
-            // UI Loading State
-            btn.innerHTML = `<span class="animate-spin">↻</span> Analyzing...`;
-            btn.disabled = true;
-            resultDiv.classList.remove('hidden');
-            resultDiv.innerHTML = `<span class="animate-pulse">Consulting the model...</span>`;
-
-            // Prompt Engineering for specific scenario
-            const prompt = `
-                Analyze the following "What If" scenario specifically through the lens of the "150-Year Cycle Shift" thesis:
-                SCENARIO: "${userScenario}"
-                
-                Output structure:
-                1. **Impact on USD:** (Strengthen or Weaken?)
-                2. **Impact on Hard Assets:** (Gold/Oil/Land reaction?)
-                3. **Cycle Conclusion:** (Does this accelerate or delay the cycle shift?)
-                Keep it brief and punchy.
-            `;
-
-            const aiResponse = await callGeminiAPI(prompt);
-
-            // Render Markdown using marked.js
-            resultDiv.innerHTML = marked.parse(aiResponse);
-            
-            // Reset UI
-            btn.innerHTML = `<span>Simulate</span>`;
-            btn.disabled = false;
-        }
-
-        // --- FEATURE 2: IMPACT CHAIN LOGIC ---
+        // --- FEATURE: IMPACT CHAIN LOGIC ---
         const chains = {
             'dedollar': {
                 title: "Petrodollar Dilution",
@@ -736,7 +583,7 @@
                 document.getElementById('chain-title').innerText = data.title;
                 document.getElementById('chain-desc').innerText = data.desc;
                 
-                // NEW: Time Range & Triggers
+                // Time Range & Triggers
                 document.getElementById('chain-timerange').innerText = data.timeRange;
                 document.getElementById('chain-triggers').innerHTML = data.triggers.map(t => `<li>${t}</li>`).join('');
 
@@ -756,114 +603,6 @@
                 content.style.opacity = '1';
             }, 150);
         }
-
-        async function analyzeChain() {
-            const chatWin = document.getElementById('chat-window');
-            if (chatWin.classList.contains('hidden')) toggleChat();
-
-            const data = chains[currentChain];
-            const prompt = `Deep dive into this specific macro chain:
-            Theme: ${data.title}
-            Description: ${data.desc}
-            Time Range: ${data.timeRange}
-            Triggers: ${data.triggers.join(', ')}
-            Impacts: ${data.sectors.join(', ')} and ${data.commodities.join(', ')}.
-            
-            Explain the investment logic: Why specifically does this theme lead to these winners/losers? 
-            What is the "Second Order Effect" people might miss?`;
-
-            addMessage(`Analyzing the chain: **${data.title}**...`, 'ai', true); 
-            const response = await callGeminiAPI(prompt);
-            
-            const messagesDiv = document.getElementById('chat-messages');
-            const lastMsg = messagesDiv.lastElementChild;
-            if(lastMsg) {
-                 const contentDiv = lastMsg.querySelector('.prose');
-                 contentDiv.classList.remove('animate-pulse');
-                 contentDiv.innerHTML = marked.parse(response);
-            }
-        }
-
-        // --- FEATURE 3: CHAT WIDGET LOGIC ---
-
-        const chatWindow = document.getElementById('chatWindow');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-
-        function toggleChat() {
-            const win = document.getElementById('chat-window');
-            if (win.classList.contains('hidden')) {
-                win.classList.remove('hidden');
-                win.classList.add('chat-slide-in');
-                win.classList.remove('chat-slide-out');
-            } else {
-                win.classList.remove('chat-slide-in');
-                win.classList.add('chat-slide-out');
-                setTimeout(() => win.classList.add('hidden'), 280);
-            }
-        }
-
-        async function sendChatMessage() {
-            const text = document.getElementById('chatInput').value.trim();
-            if (!text) return;
-
-            // 1. Add User Message
-            addMessage(text, 'user');
-            document.getElementById('chatInput').value = '';
-
-            // 2. Add Loading Message
-            const loadingId = addMessage('Analyzing...', 'ai', true);
-
-            // 3. Call API
-            const response = await callGeminiAPI(text);
-
-            // 4. Update AI Message
-            updateMessage(loadingId, response);
-        }
-
-        function addMessage(text, sender, isLoading = false) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `flex gap-2 ${sender === 'user' ? 'flex-row-reverse' : ''}`;
-            const id = 'msg-' + Date.now();
-            msgDiv.id = id;
-
-            const avatar = sender === 'user' 
-                ? `<div class="w-6 h-6 rounded-full bg-stone-300 text-stone-600 flex items-center justify-center text-xs flex-shrink-0">You</div>`
-                : `<div class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs flex-shrink-0">AI</div>`;
-
-            const bubbleClass = sender === 'user'
-                ? `bg-stone-800 text-white rounded-tl-lg rounded-bl-lg rounded-br-lg`
-                : `bg-white text-stone-700 rounded-tr-lg rounded-br-lg rounded-bl-lg border border-stone-200 shadow-sm`;
-
-            msgDiv.innerHTML = `
-                ${avatar}
-                <div class="${bubbleClass} p-3 max-w-[85%] prose prose-sm ${isLoading ? 'animate-pulse' : ''}">
-                    ${isLoading ? text : marked.parse(text)}
-                </div>
-            `;
-
-            document.getElementById('chat-messages').appendChild(msgDiv);
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-            return id;
-        }
-
-        function updateMessage(id, newText) {
-            const el = document.getElementById(id);
-            if (el) {
-                const contentDiv = el.querySelector('.prose');
-                contentDiv.classList.remove('animate-pulse');
-                contentDiv.innerHTML = marked.parse(newText);
-            }
-        }
-
-        // Allow Enter key to send
-        document.getElementById('chatInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendChatMessage();
-        });
-        document.getElementById('scenarioInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') runScenario();
-        });
-
     </script>
 </body>
 </html>
